@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6" *ngFor="let product of prod">
+    <div class="card mb-3" style="max-width: 18rem">
+      <div class="card-header">
+        {{ product.name }}
+      </div>
+      <div class="card-body mb-3">
+        <img class="card-img-top" [src]="product.imgUrl" alt="Card image cap" />
+      </div>
+      <div class="card-footer">
+        <a href="#" class="btn btn-primary mr-2" (click)="addToCart(product)">Add To Cart</a>
+
+
+        <a href="#" class="btn btn-info mr-2" (click)="incrementQuantity(product)">+</a>
+
+        <input
+          type="number"
+          name="cartQuantity"
+          style="width: 2rem"
+          disabled
+          [(ngModel)]="product.cartQuantity"
+        />
+        <a href="#" class="btn btn-info ml-2" (click)="decrementQuantity(product)">-</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
